@@ -1,55 +1,16 @@
-## 🎬 CineFlow - Media Discovery Dashboard
+# React + Vite
 
-CineFlow is a media discovery application designed to demonstrate mastery of **Modern React (2026)**. The project focuses on advanced architectural patterns, efficient state management, and performance optimization using the full suite of React Hooks.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-### 🏗️ Architecture & Patterns
+Currently, two official plugins are available:
 
-The project follows a **Feature-Based** organizational structure combined with the **Service-Hook-Component (SHC)** pattern:
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-* **Component-Based Architecture:** The UI is broken down into small, reusable, and independent building blocks.
-* **Services:** Pure JavaScript functions responsible for TMDB API communication.
-* **Custom Hooks:** The "brains" of the features, managing state, side effects, and business logic.
-* **Public API (Barrel files):** Using `index.js` per feature folder to encapsulate internal logic and expose only necessary interfaces.
+## React Compiler
 
-### 🛠️ Tech Stack
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-* **Environment:** [Vite](https://vitejs.dev/) (Build tool).
-* **Frontend:** React 18/19 (**JavaScript**).
-* **Code Quality:** **ESLint** (Linting) & **Prettier** (Formatting).
-* **Styling:** Tailwind CSS.
-* **Testing:** [Vitest](https://vitest.dev/) for Unit Testing (Focusing on API Services and Logic).
-* **Data Source:** [The Movie Database (TMDB) API](https://www.themoviedb.org/).
+## Expanding the ESLint configuration
 
-### 🪝 Hooks Implementation Goals
-
-This project serves as a sandbox to master the following hooks in real-world scenarios:
-
-1. **`useState` & `useEffect**`: Handling asynchronous data fetching and API lifecycles.
-2. **`useContext` & `useReducer**`: Managing a complex global state for "Favorites" and "Watch Later" lists.
-3. **`useMemo` & `useCallback**`: Optimizing list rendering and preventing unnecessary re-renders in the `MovieCard` component.
-4. **`useRef`**: Managing `AbortController` for request cleanup and handling DOM references for search focus.
-5. **Custom Hooks**: Building reusable logic such as `useFetch`, `useLocalStorage`, and `useDebounce`.
-
-### 📂 Feature-Based Structure
-
-```text
-src/
-├── api/             # Base API configuration (Axios/Fetch)
-├── components/      # Global UI Components (Atoms/Molecules)
-├── features/        # Domain-driven folders
-│   ├── movies/      # List, Grid, and Detail logic
-│   ├── search/      # Search logic and filtering
-│   └── favorites/   # Global favorites state & persistence
-├── hooks/           # Shared utility hooks
-├── utils/           # Formatting and helper functions
-└── __tests__/       # Critical unit tests (Reducers & Services)
-
-```
-
-### 🧪 Critical Testing Strategy
-
-We focus on testing logic that impacts the user's data and app stability:
-
-* **API Services:** Ensuring data transformation from TMDB is correct.
-* **Reducers:** Validating state transitions for the Favorites system.
-* **Utilities:** Testing helper functions (e.g., date formatting).
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
