@@ -16,7 +16,8 @@ export default defineConfig([
   eslintConfigPrettier,
   {
     rules: {
-      "react/react-in-jsx-scope": "off"
+      "react/react-in-jsx-scope": "off",
+      "quotes": ["error", "double", { "avoidEscape": true, "allowTemplateLiterals": true }]
     }
   }
 ]);
