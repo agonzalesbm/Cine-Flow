@@ -1,0 +1,13 @@
+import { tmdbClient } from "../../../api/tmdbClient";
+
+export const movieService = {
+  getTreding: async (page = 1) => {
+    return await tmdbClient(`/trending/movie/day?language=en-US&${page}'`);
+  },
+  getMovieDetails: async (movieId) => {
+    return await tmdbClient(`/movie/${movieId}?language=en-US`);
+  },
+  searchMovies: async (query, page = 1) => {
+    return await tmdbClient((`/search/movie?query=${encodeURIComponent(query)}&include_adult=false&language=en-US&page=${page}`));
+  }
+};
