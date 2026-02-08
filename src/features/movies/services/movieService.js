@@ -1,8 +1,8 @@
 import { tmdbClient } from "../../../api/tmdbClient";
 
 export const movieService = {
-  getTrending: async (page = 1) => {
-    return await tmdbClient(`/trending/movie/day?language=en-US&${page}'`);
+  getTrending: async (page = 1, options = {}) => {
+    return await tmdbClient(`/trending/movie/day?language=en-US&${page}'`, options);
   },
   getMovieDetails: async (movieId) => {
     return await tmdbClient(`/movie/${movieId}?language=en-US`);
