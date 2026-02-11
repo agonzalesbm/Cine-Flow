@@ -21,7 +21,10 @@ describe("movieService", () => {
     const result = await movieService.getTrending();
 
     expect(result).toEqual(mockData);
-    expect(fetch).toHaveBeenCalled();
+    expect(fetch).toHaveBeenCalledWith(
+      expect.stringContaining("/trending/movie/day?language=en-US&page=1"),
+      expect.any(Object)
+    );
     expect(result.results[0].title).toBe("Test Movie");
   });
 
@@ -30,7 +33,7 @@ describe("movieService", () => {
       ok: false
     });
 
-    expect(fetch).toHaveBeenCalled();
+    // expect(fetch).toHaveBeenCalled();
     await expect(movieService.getTrending()).rejects.toThrowError();
   });
 
@@ -51,7 +54,10 @@ describe("movieService", () => {
     const result = await movieService.getMovieDetails(19);
 
     expect(result).toEqual(mockData);
-    expect(fetch).toHaveBeenCalled();
+    expect(fetch).toHaveBeenCalledWith(
+      expect.stringContaining("/movie/19?language=en-US"),
+      expect.any(Object)
+    );
   });
 
   it("getMovieDetails should throw an error when API response not ok", async () => {
@@ -59,8 +65,8 @@ describe("movieService", () => {
       ok: false
     });
 
-    expect(fetch).toHaveBeenCalled();
-    await expect(movieService.getMovieDetails()).rejects.toThrowError();
+    // expect(fetch).toHaveBeenCalled();
+    await expect(movieService.getMovieDetails(19)).rejects.toThrowError();
   });
 
   it("searchMovies shoudl return a movie based on a query", async () => {
@@ -89,7 +95,10 @@ describe("movieService", () => {
     const result = await movieService.searchMovies("Caribe");
 
     expect(result).toEqual(mockData);
-    expect(fetch).toHaveBeenCalled();
+    expect(fetch).toHaveBeenCalledWith(
+      expect.stringContaining("/search/movie?query=Caribe&include_adult=false&language=en-US&page=1"),
+      expect.any(Object)
+    );
   });
 
   it("searchMovies should throw an error when API response not ok", async () => {

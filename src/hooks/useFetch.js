@@ -27,7 +27,7 @@ export const useFetch = (apiCall) => {
     return () => {
       if (abortContollerRef.current) abortContollerRef.current.abort();
     };
-  }), [apiCall];
+  }, [apiCall]);
 
   return { data, loading, error };
 };
