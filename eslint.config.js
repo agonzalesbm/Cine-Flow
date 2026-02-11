@@ -18,7 +18,8 @@ export default defineConfig([
     rules: {
       "react/react-in-jsx-scope": "off",
       "quotes": ["error", "double", { "avoidEscape": true, "allowTemplateLiterals": true }],
-      "semi": ["error", "always"]
+      "semi": ["error", "always"],
+      "react/prop-types": "off"
     }
   }
 ]);
