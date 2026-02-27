@@ -7,7 +7,7 @@ export const movieService = {
   getMovieDetails: async (movieId) => {
     return await tmdbClient(`/movie/${movieId}?language=en-US`);
   },
-  searchMovies: async (query, page = 1) => {
-    return await tmdbClient((`/search/movie?query=${encodeURIComponent(query)}&include_adult=false&language=en-US&page=${page}`));
+  searchMovies: async (query, page = 1, options = {}) => {
+    return await tmdbClient((`/search/movie?query=${encodeURIComponent(query)}&include_adult=false&language=en-US&page=${page}`), options);
   }
 };
