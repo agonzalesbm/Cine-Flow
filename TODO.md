@@ -9,12 +9,12 @@
 * [x] Base UI: `MovieGrid` and `MovieCard`.
 * [x] Install and setup Tailwindcss on project
 
-#### **Phase 2: Interaction & Search (Current)**
+#### **Phase 2: Interaction & Search**
 
-* [ ] **Create the `Search` Feature:** Implement a search bar that updates the grid.
-* [ ] **Custom Hook `useDebounce`:** Practice logic to delay API calls while typing.
-* [ ] **`useRef` Practice:** Auto-focus the search input on mount or via shortcut.
-* [ ] **Pagination logic:** Update the `useTrendingMovies` to handle page changes.
+* [x] **Create the `Search` Feature:** Implement a search bar that updates the grid.
+* [x] **Custom Hook `useDebounce`:** Practice logic to delay API calls while typing.
+* [x] **`useRef` Practice:** Auto-focus the search input on mount or via shortcut.
+* [x] **Pagination logic:** Update the `useTrendingMovies` to handle page changes.
 
 #### **Phase 3: Global State & Persistence (Upcoming)**
 
