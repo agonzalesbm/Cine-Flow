@@ -3,18 +3,16 @@ import { favoritesReducer, initialState } from "./favoritesReducer";
 
 const FavoritesConext = createContext();
 
+function init(initialValue) {
+  const saved = localStorage.getItem("cineflow_favorites");
+  return saved ? JSON.parse(saved) : initialValue;
+}
+
 export function FavoritesProvider({ children }) {
-  const [favorites, dispatch] = useReducer(favoritesReducer, initialState);
+  const [favorites, dispatch] = useReducer(favoritesReducer, initialState, init);
 
   useEffect(() => {
-    const saved = localStorage.getItem("cineflow_favorites");
-    if (saved) {
-      dispatch({ type: "INIT_FAVORITES", payload: JSON.parse(saved) });
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("cienflow_favorites", JSON.stringify(favorites));
+    localStorage.setItem("cineflow_favorites", JSON.stringify(favorites));
   }, [favorites]);
 
   function addFavorite(movie) {
