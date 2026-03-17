@@ -16,13 +16,20 @@
 * [x] **`useRef` Practice:** Auto-focus the search input on mount or via shortcut.
 * [x] **Pagination logic:** Update the `useTrendingMovies` to handle page changes.
 
-#### **Phase 3: Global State & Persistence (Upcoming)**
+#### **Phase 3: Global State & Persistence**
 
-* [ ] **Favorites System:** Implement `useContext` + `useReducer`.
-* [ ] **Persistence:** Create a `useLocalStorage` hook to keep favorites after a refresh.
-* [ ] **Performance Audit:** Use `useMemo` and `React.memo` to optimize the `MovieCard` inside the grid.
+* [x] **Favorites System:** Implement `useContext` + `useReducer`.
+* [x] **Persistence:** Keep favorites after a refresh with `localStorage`.
+* [x] **Performance Audit:** Use `useMemo` and `React.memo` to optimize the `MovieCard` inside the grid.
 
-#### **Phase 4: Details & Polish (Final)**
+#### **Phase 4: Routing & Navigation**
+
+* [ ] Install & Configure React Router.
+* [ ] Dynamic Routing: Create a `/movie/:id` route for movie details.
+* [ ] `useParams` Practice: Fetch specific movie data based on the URL ID.
+* [ ] Navigation logic: Link the `MovieCard` to the details page.
+
+#### **Phase 5: Details & Polish (Final)**
 
 * [ ] **Dynamic Routing:** Use `react-router-dom` (or simple state) to show movie details.
 * [ ] **Skeleton Loaders:** Improve UX by replacing the "Loading..." text with animated shapes.
