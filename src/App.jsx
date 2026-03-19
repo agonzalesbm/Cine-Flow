@@ -1,10 +1,8 @@
-import { MovieGrid } from "./features/movies";
-import { SearchBar, SearchResults, useSearchMovies } from "./features/search";
+import { Home } from "./pages/Home";
+import { MovieDetail } from "./pages/MovieDetail";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  const { query, setQuery, results, loading: searchLoading } = useSearchMovies();
-  const isSearching = query.length > 0;
-
   return (
     <div className="min-h-screen bg-black text-white">
       <header className="p-6 border-b border-gray-800">
@@ -12,17 +10,12 @@ function App() {
       </header>
 
       <main className="max-w-7xl mx-auto">
-        <SearchBar query={query} onSearchChange={setQuery} />
-        <div className="px-6 pt-4">
-          <h2 className="px-6 pt-8 text-xl font-semibold">
-            {isSearching ? `Results for: "${query}"` : "Trending Today"}
-          </h2>
-        </div>
-        {isSearching ? (
-          <SearchResults results={results} loading={searchLoading} />
-        ) : (
-          <MovieGrid />
-        )}
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="movie">
+            <Route path=":id" element={<MovieDetail />} />
+          </Route>
+        </Routes>
       </main>
     </div >
   );
