@@ -24,10 +24,12 @@
 
 #### **Phase 4: Routing & Navigation**
 
-* [ ] Install & Configure React Router.
-* [ ] Dynamic Routing: Create a `/movie/:id` route for movie details.
-* [ ] `useParams` Practice: Fetch specific movie data based on the URL ID.
-* [ ] Navigation logic: Link the `MovieCard` to the details page.
+* [x] Install & Configure React Router.
+* [x] Dynamic Routing: Create a `/movie/:id` route for movie details.
+* [x] `useParams` Practice: Fetch specific movie data based on the URL ID.
+* [x] Navigation logic: `<Link />` component used on `MovieCard` to the details page.
+* [x] Event bubbling fix: e.preventDefault added on favorite handler to prevent redirection on card component.
+* [ ] Favorites gallery: Create a dedicated route/view to show only saved movies.
 
 #### **Phase 5: Details & Polish (Final)**
 
